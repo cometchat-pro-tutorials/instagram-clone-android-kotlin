@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Instagram Clone</string>
+    <string name="email_edt">Email</string>
+    <string name="password_edt">Password</string>
+    <string name="login_btn">Login</string>
+    <string name="register_txt">Create New Account</string>
+    <string name="fullname_edt">Full Name</string>
+    <string name="confirm_password_edt">Confirm Password</string>
+    <string name="register_btn">Register</string>
+    <string name="user_name_edt">Username</string>
+    <string name="upload_title_txt">Upload your avatar</string>∂
+    <string name="upload_post_txt">Upload your post or video</string>
+    <string name="create_post_btn">Create a post</string>
+    <string name="ella_txt">Ella</string>
+    <string name="follow_txt">Follow</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/dot.xml" value="0.25885416666666666" />
+        <entry key="app/src/main/res/drawable/image_container.xml" value="0.25885416666666666" />
+        <entry key="app/src/main/res/drawable/input.xml" value="0.11041666666666666" />
+        <entry key="app/src/main/res/drawable/login_btn.xml" value="0.11041666666666666" />
+        <entry key="app/src/main/res/drawable/profile_image_container.xml" value="0.18229166666666666" />
+        <entry key="app/src/main/res/layout/activity_create.xml" value="0.18568840579710144" />
+        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.23233695652173914" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2296875" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_feed.xml" value="0.23233695652173914" />
+        <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.23233695652173914" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/notification_item.xml" value="0.23233695652173914" />
+        <entry key="app/src/main/res/layout/post_item.xml" value="0.23233695652173914" />
+        <entry key="app/src/main/res/layout/profile_post_item.xml" value="0.23233695652173914" />
+        <entry key="app/src/main/res/menu/navigation.xml" value="0.24375" />
+        <entry key="uikit-kotlin/src/main/res/menu/group_action_menu.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
