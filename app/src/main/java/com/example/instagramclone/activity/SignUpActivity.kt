@@ -50,6 +50,8 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
 
     private var pDialog: ProgressDialog? = null
 
+    private var uploadedUri: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
@@ -104,6 +106,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
                 return
             }
             val uri = data?.data
+            uploadedUri = uri.toString()
             if (uri != null) {
                 val imageBitmap = uriToBitmap(uri)
                 Glide.with(this)
@@ -132,6 +135,10 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun validate(fullName: String?, email: String?, password: String?, confirmPassword: String?): Boolean {
+        if (uploadedUri == null || uploadedUri.equals(EMPTY_STRING)) {
+            Toast.makeText(this@SignUpActivity, "Please upload your avatar", Toast.LENGTH_LONG).show();
+            return false;
+        }
         if (fullName == null || fullName.equals(EMPTY_STRING)) {
             Toast.makeText(this@SignUpActivity, "Please input your full name", Toast.LENGTH_LONG).show();
             return false;
