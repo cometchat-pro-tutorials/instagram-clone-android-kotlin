@@ -82,7 +82,7 @@ class FeedFragment : Fragment() {
         postRv!!.layoutManager = LinearLayoutManager(this.context)
         val cometChatUser = CometChat.getLoggedInUser()
         val cometChatUserId = cometChatUser.uid
-        adapter = PostAdapter(this, mDatabase!!, this.requireContext(), posts, cometChatUserId)
+        adapter = this.context?.let { PostAdapter(this, mDatabase!!, it, posts, cometChatUserId) }
         postRv!!.adapter = adapter
         pDialog!!.dismiss()
     }
@@ -118,7 +118,9 @@ class FeedFragment : Fragment() {
                 }
             }
             posts!!.set(index!!, post)
-            adapter!!.notifyDataSetChanged()
+            if (adapter != null) {
+                adapter!!.notifyDataSetChanged()
+            }
         }?.addOnFailureListener {
         }
     }

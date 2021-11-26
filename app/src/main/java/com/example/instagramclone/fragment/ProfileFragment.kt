@@ -125,7 +125,7 @@ class ProfileFragment : Fragment() {
                     Glide.with(this)
                         .load(user!!.avatar)
                         .circleCrop()
-                        .into(authorAvatarIv!!);
+                        .into(authorAvatarIv!!)
                     nPostsTxt?.text = if (user.nPosts !== null) user.nPosts.toString() else "0"
                     nFollowersTxt?.text = if (user.nFollowers !== null) user.nFollowers.toString() else "0"
                 }?.addOnFailureListener {
@@ -140,7 +140,7 @@ class ProfileFragment : Fragment() {
             return;
         }
         postRv!!.layoutManager = GridLayoutManager(this.context, 3)
-        val adapter = ProfilePostAdapter(this.requireContext(), posts)
+        val adapter = this.context?.let { ProfilePostAdapter(it, posts) }
         postRv!!.adapter = adapter
         pDialog!!.dismiss()
     }

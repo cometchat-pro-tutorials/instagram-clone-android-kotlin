@@ -80,7 +80,7 @@ class NotificationFragment : Fragment() {
             return;
         }
         notificationRv!!.layoutManager = LinearLayoutManager(this.context)
-        val adapter = NotificationAdapter(this.requireContext(), notifications)
+        val adapter = this.context?.let { NotificationAdapter(it, notifications) }
         notificationRv!!.adapter = adapter
         pDialog!!.dismiss()
     }
