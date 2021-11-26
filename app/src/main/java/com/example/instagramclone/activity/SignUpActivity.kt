@@ -11,6 +11,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.core.app.ActivityCompat
@@ -168,12 +169,12 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun createCometChatAccount(userId: String?, fullname: String?, avatar: String?) {
-        val apiKey = Constants.COMETCHAT_API_KEY // Replace with your API Key.
+        val authKey = Constants.COMETCHAT_AUTH_KEY // Replace with your API Key.
         val user = User()
         user.uid = userId // Replace with your uid for the user to be created.
         user.name = fullname // Replace with the name of the user
         user.avatar = avatar
-        CometChat.createUser(user, apiKey, object : CallbackListener<User>() {
+        CometChat.createUser(user, authKey, object : CallbackListener<User>() {
             override fun onSuccess(user: User) {
                 pDialog!!.dismiss()
                 Toast.makeText(this@SignUpActivity, fullname + " was created successfully", Toast.LENGTH_LONG).show()
@@ -181,6 +182,8 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
             }
             override fun onError(e: CometChatException) {
                 pDialog!!.dismiss()
+                Log.d("Error", e.printStackTrace().toString())
+                Toast.makeText(this@SignUpActivity, e.printStackTrace().toString(), Toast.LENGTH_LONG).show()
             }
         })
     }
