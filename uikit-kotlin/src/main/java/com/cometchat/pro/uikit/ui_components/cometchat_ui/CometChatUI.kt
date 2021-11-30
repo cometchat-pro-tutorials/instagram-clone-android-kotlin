@@ -73,6 +73,9 @@ class CometChatUI : AppCompatActivity(), BottomNavigationView.OnNavigationItemSe
     private var progressDialog: ProgressDialog? = null
     private var groupPassword: String? = null
     private var group: Group? = null
+
+    private var loggedInUsername: TextView? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityCometChatUnifiedBinding = DataBindingUtil.setContentView(this, R.layout.activity_cometchat_unified)
@@ -182,13 +185,13 @@ class CometChatUI : AppCompatActivity(), BottomNavigationView.OnNavigationItemSe
             }
 
         })
-        FeatureRestriction.isUserSettingsEnabled(object : FeatureRestriction.OnSuccessListener{
+        /* FeatureRestriction.isUserSettingsEnabled(object : FeatureRestriction.OnSuccessListener{
             override fun onSuccess(p0: Boolean) {
                 userSettingsEnabled = p0
                 activityCometChatUnifiedBinding?.bottomNavigation?.menu?.findItem(R.id.menu_more)?.isVisible =  p0
             }
 
-        })
+        }) */
 
 
 //        badgeDrawable!!.isVisible = false
@@ -200,6 +203,9 @@ class CometChatUI : AppCompatActivity(), BottomNavigationView.OnNavigationItemSe
             userSettingsEnabled -> loadFragment(CometChatUserProfile())
             userListEnabled -> loadFragment(CometChatUserList())
         }
+        val user: User = CometChat.getLoggedInUser()
+        loggedInUsername = findViewById(R.id.loggedIn_userName);
+        loggedInUsername?.text = user.name
     }
 
     /**
@@ -383,9 +389,9 @@ class CometChatUI : AppCompatActivity(), BottomNavigationView.OnNavigationItemSe
             R.id.menu_conversation -> {
                 fragment = CometChatConversationList()
             }
-            R.id.menu_more -> {
+            /* R.id.menu_more -> {
                 fragment = CometChatUserProfile()
-            }
+            } */
             R.id.menu_call -> {
                 fragment = CometChatCallList()
             }
