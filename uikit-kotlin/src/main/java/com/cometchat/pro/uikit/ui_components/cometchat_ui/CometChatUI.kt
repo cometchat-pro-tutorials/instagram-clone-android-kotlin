@@ -12,6 +12,7 @@ import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -29,6 +30,7 @@ import com.cometchat.pro.uikit.R
 import com.cometchat.pro.uikit.databinding.ActivityCometchatUnifiedBinding
 import com.cometchat.pro.uikit.ui_components.calls.call_list.CometChatCallList
 import com.cometchat.pro.uikit.ui_components.chats.CometChatConversationList
+import com.cometchat.pro.uikit.ui_components.groups.create_group.CometChatCreateGroupActivity
 import com.cometchat.pro.uikit.ui_components.groups.group_list.CometChatGroupList
 import com.cometchat.pro.uikit.ui_components.messages.message_list.CometChatMessageListActivity
 import com.cometchat.pro.uikit.ui_components.userProfile.CometChatUserProfile
@@ -75,6 +77,9 @@ class CometChatUI : AppCompatActivity(), BottomNavigationView.OnNavigationItemSe
     private var group: Group? = null
 
     private var loggedInUsername: TextView? = null
+    private var backIcon: ImageView? = null
+    private var createGroup: ImageView? = null
+    private var more: ImageView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -131,6 +136,17 @@ class CometChatUI : AppCompatActivity(), BottomNavigationView.OnNavigationItemSe
             override fun OnItemClick(t: Any, position: Int) {
                 startUserIntent(t as User)
             }
+        })
+
+        backIcon?.setOnClickListener(View.OnClickListener { finish() })
+
+        createGroup?.setOnClickListener(View.OnClickListener {
+            val intent = Intent(this@CometChatUI, CometChatCreateGroupActivity::class.java)
+            startActivity(intent)
+        })
+
+        more?.setOnClickListener(View.OnClickListener {
+            loadFragment(CometChatUserProfile())
         })
     }
 
@@ -203,9 +219,14 @@ class CometChatUI : AppCompatActivity(), BottomNavigationView.OnNavigationItemSe
             userSettingsEnabled -> loadFragment(CometChatUserProfile())
             userListEnabled -> loadFragment(CometChatUserList())
         }
+
         val user: User = CometChat.getLoggedInUser()
         loggedInUsername = findViewById(R.id.loggedIn_userName);
         loggedInUsername?.text = user.name
+
+        backIcon = findViewById(R.id.backIcon)
+        createGroup = findViewById(R.id.create_group)
+        more = findViewById(R.id.more);
     }
 
     /**
