@@ -45,6 +45,7 @@ class PostAdapter(
             .circleCrop()
             .into(holder.authorAvatarIv);
         holder.authorNameTxt.text = post.author?.name
+        holder.likeCountTxt.text = post.nLikes.toString() + " Likes"
         if (cometChatUserId.equals(post.author!!.uid)) {
             holder.followTxt.isVisible = false
             holder.dot.isVisible = false
@@ -94,6 +95,7 @@ class PostAdapter(
         val heartIv: ImageView = itemView.findViewById(R.id.heartIv)
         val dot: View = itemView.findViewById(R.id.dot)
         val postContentVv: VideoView = itemView.findViewById(R.id.postContentVv)
+        val likeCountTxt: TextView = itemView.findViewById(R.id.likeCountTxt)
     }
 
     private fun goToDetail(post: Post?) {

@@ -65,16 +65,17 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
                 android:id="@+id/postContentIv"
-                android:adjustViewBounds="true"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true" />
 
             <VideoView
                 android:id="@+id/postContentVv"
                 android:layout_width="match_parent"
-                android:layout_height="320dp"/>
+                android:layout_height="320dp" />
         </FrameLayout>
 
         <LinearLayout
@@ -91,6 +92,14 @@
                 android:layout_marginRight="12dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/heart" />
+
+            <TextView
+                android:id="@+id/likeCountTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="12dp"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="24dp"
