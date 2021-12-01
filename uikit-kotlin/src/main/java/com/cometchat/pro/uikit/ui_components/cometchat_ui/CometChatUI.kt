@@ -34,6 +34,7 @@ import com.cometchat.pro.uikit.ui_components.groups.create_group.CometChatCreate
 import com.cometchat.pro.uikit.ui_components.groups.group_list.CometChatGroupList
 import com.cometchat.pro.uikit.ui_components.messages.message_list.CometChatMessageListActivity
 import com.cometchat.pro.uikit.ui_components.userProfile.CometChatUserProfile
+import com.cometchat.pro.uikit.ui_components.userProfile.UserProfileActivity
 import com.cometchat.pro.uikit.ui_components.users.user_list.CometChatUserList
 import com.cometchat.pro.uikit.ui_resources.constants.UIKitConstants
 import com.cometchat.pro.uikit.ui_resources.utils.ErrorMessagesUtils
@@ -146,7 +147,8 @@ class CometChatUI : AppCompatActivity(), BottomNavigationView.OnNavigationItemSe
         })
 
         more?.setOnClickListener(View.OnClickListener {
-            loadFragment(CometChatUserProfile())
+            val intent = Intent(this@CometChatUI, UserProfileActivity::class.java)
+            startActivity(intent)
         })
     }
 

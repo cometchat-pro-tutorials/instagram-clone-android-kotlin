@@ -126,7 +126,7 @@
     <string name="only_group_owner_removes_admin">You don\'t have permission to remove admin from the group..</string>
     <string name="removed_from_admin">%1$s is removed from admin privilege</string>
     <string name="update_group_member_error">Unable to update Group Member</string>
-    <string name="admin_list_retrieve_error" >Admin list retrieval failed</string>
+    <string name="admin_list_retrieve_error">Admin list retrieval failed</string>
     <string name="create_group_error">Unable to create a group</string>
     <string name="update_scope_error">Operation failed on %1$s</string>
     <string name="group_member_list_error">Error : Not able to load group member list</string>
@@ -358,7 +358,6 @@
     <string name="grant_permission_to_access_storage">Please grant permission to access storage</string>
     <string name="you_cannot_perform_action_on_yourself">You cannot perform action on yourself</string>
     <string name="do_not_have_permission_to_remove_admin_from_the_group">You don\'t have permission to remove admin from the group</string>
-
 
 
     <string name="send_message_privately">Send Message Privately</string>
